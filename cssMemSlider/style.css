@@ -11,41 +11,86 @@ body{
     height: 100%;
     font-size: 16px;
     background-color: rgba(0, 0, 0, 0.7);
+    overflow-x: hidden;
 }
 .wrapper{
     margin: 0 auto;
     padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 .title{
     font-size: 48px;
     color: antiquewhite;
-    text-align: center;
-}
-.container{
-    width: 850px;
-    /* height: 800px; */
-    background-color: darkcyan;
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    margin: 10px 0px 20px 0px;
+    transform: translateX(-50%);
+    animation-name: change-size;
+    animation-duration: 3s;
+}
+@media screen and (max-width: 930px){
+    .title{
+        font-size: 42px;
+        animation-name: change-small;
+        animation-duration: 3s;
+    }
+}
+@media screen and (max-width: 630px){
+    .title{
+       font-size: 30px;
+       animation-name: none;
+    }
+}
+
+.container{
+    margin-top: 100px;
+    width: 850px;
+    /* height: 800px; */
+    background-color:rgba(135, 206, 250, 0.895);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
     overflow: hidden;
     border: 3px solid black;
     box-shadow: 0px 2px 15px black;
     border-radius: 10px;
 }
+@media screen and (max-width: 930px){
+    .container{
+        width: 600px;
+    }
+}
+@media screen and (max-width: 630px){
+    .container{
+        width: 400px;
+    }
+}
+
 input{
     visibility: hidden;
     cursor: none;
     position: absolute;
 }
 .slide-block{
-    height: 800px;
+    height: 850px;
     padding:  20px;
     width: 20%;
-    transition: all 0.5s;
-    opacity: 0;
-   
+    transition: all 0.8s;
+}
+@media screen and (max-width: 930px){
+    .slide-block{
+        height: 600px;
+    }
+}
+@media screen and (max-width: 630px){
+    .slide-block{
+        height: 500px;
+    }
 }
 .slide-image{
     width: 100%;
@@ -53,6 +98,18 @@ input{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
+}
+@media screen and (max-width: 930px){
+    .slide-image{
+        background-size: 600px;
+        height: 400px;
+    }
+}
+@media screen and (max-width: 630px){
+    .slide-image{
+        background-size: 400px;
+        height: 300px;
+    }
 }
 
 .one{
@@ -73,19 +130,33 @@ input{
 
 .slide-text{
     margin-top: 30px;
-    font-size: 32px;
+    font-size: 36px;
     text-align: center;
     font-style: italic;
     font-weight: bold;
 }
+@media screen and (max-width: 930px){
+    .slide-text{
+        font-size: 28px;
+        /* margin-top: 20px; */
+    }
+}
+@media screen and (max-width: 630px){
+    .slide-text{
+        font-size: 28px;
+        margin-top: 10px;
+    }
+}
+
 .navigator{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    bottom: 20px;
+    bottom: 15px;
     display: flex;
     flex-direction: row;
 }
+
 .nav{
     width: 32px;
     height: 32px;
@@ -98,11 +169,12 @@ input{
     transition: all 0.3s;
     cursor: pointer
 }
+
 .nav:hover{
     background-color: rgba(255, 255, 0, 0.432);
 }
 .nav:active{
-    box-shadow: 0px 0px 15px yellow;
+    box-shadow: 0px 0px 20px yellow;
 
 }
 
@@ -126,22 +198,32 @@ input{
 #el5:checked ~ .first{
     margin-left: -80%;
 }
-#el1:checked ~ .slide-block,
-#el2:checked ~ .slide-block,
-#el3:checked ~ .slide-block,
-#el4:checked ~ .slide-block,
-#el5:checked ~ .slide-block{
-    opacity: 1;
+/* #el1:checked ~ .slide-image,
+#el2:checked ~ .slide-image,
+#el3:checked ~ .slide-image,
+#el4:checked ~ .slide-image,
+#el5:checked ~ .slide-image{
+    animation-name: change-opacity;
+    animation-duration: 4s;
    
-}
+} */
 #el1:checked ~ .navigator label:nth-child(1),
 #el2:checked ~ .navigator label:nth-child(2),
 #el3:checked ~ .navigator label:nth-child(3),
 #el4:checked ~ .navigator label:nth-child(4),
 #el5:checked ~ .navigator label:nth-child(5){
-    background-color: rgba(0, 0, 0, 0.422);
-
+    background-color: yellow;
+    transform: scale(0.96);
+    transition: all 0.3s;
    
+}
+@keyframes change-size {
+    0% {font-size: 24px;}
+    100%{font-size: 48px;}
+}
+@keyframes change-small{
+    0% {font-size: 20px;}
+    100%{font-size: 42px;}
 }
 
 
