@@ -1,0 +1,139 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    max-width: 1440px;
+    height: 100%;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container{
+    width: 850px;
+    height: 800px;
+    background-color: darkcyan;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border: 3px solid black;
+    box-shadow: 0px 2px 15px black;
+    border-radius: 10px;
+}
+input{
+    visibility: hidden;
+    cursor: none;
+    position: absolute;
+}
+.slide-block{
+    height: 800px;
+    padding:  20px;
+    width: 20%;
+    transition: all 0.5s;
+    opacity: 0;
+   
+}
+.slide-image{
+    width: 100%;
+    height: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.one{
+    background-image: url(assets/images/1.jpg);
+}
+.two{
+    background-image: url(assets/images/2.jpg);
+}
+.three{
+    background-image: url(assets/images/3.jpg);
+}
+.four{
+    background-image: url(assets/images/4.jpg);
+}
+.five{
+    background-image: url(assets/images/5.jpg);
+}
+
+.slide-text{
+    margin-top: 30px;
+    font-size: 32px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+.navigator{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.nav{
+    width: 32px;
+    height: 32px;
+    margin: 5px;
+    border-radius: 50%;
+    background-image: url(assets/icon/smile.png);
+    background-size: auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    cursor: pointer
+}
+.nav:hover{
+    background-color: rgba(255, 255, 0, 0.432);
+}
+.nav:active{
+    box-shadow: 0px 0px 15px yellow;
+
+}
+
+.sliders-container{
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+#el1:checked ~ .first{
+    margin-left: 0;
+}
+#el2:checked ~ .first{
+    margin-left: -20%;
+}
+#el3:checked ~ .first{
+    margin-left: -40%;
+}
+#el4:checked ~ .first{
+    margin-left: -60%;
+}
+#el5:checked ~ .first{
+    margin-left: -80%;
+}
+#el1:checked ~ .slide-block,
+#el2:checked ~ .slide-block,
+#el3:checked ~ .slide-block,
+#el4:checked ~ .slide-block,
+#el5:checked ~ .slide-block{
+    opacity: 1;
+   
+}
+#el1:checked ~ .navigator label:nth-child(1),
+#el2:checked ~ .navigator label:nth-child(2),
+#el3:checked ~ .navigator label:nth-child(3),
+#el4:checked ~ .navigator label:nth-child(4),
+#el5:checked ~ .navigator label:nth-child(5){
+    background-color: rgba(0, 0, 0, 0.422);
+
+   
+}
+
+
