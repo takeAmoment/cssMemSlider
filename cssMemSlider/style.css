@@ -12,10 +12,18 @@ body{
     font-size: 16px;
     background-color: rgba(0, 0, 0, 0.7);
 }
-
+.wrapper{
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.title{
+    font-size: 48px;
+    color: antiquewhite;
+    text-align: center;
+}
 .container{
     width: 850px;
-    height: 800px;
+    /* height: 800px; */
     background-color: darkcyan;
     position: absolute;
     left: 50%;
