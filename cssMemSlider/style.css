@@ -6,128 +6,117 @@
     border: 0;
     box-sizing: border-box;
 }
+html{
+    font-size: 10px;
+}
 body{
-    max-width: 1440px;
+    width: 100%;
     height: 100%;
-    font-size: 16px;
+    
     background-color: rgba(0, 0, 0, 0.7);
     overflow-x: hidden;
 }
 .wrapper{
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 10px 20px;
+    width: 100%;
+    padding: 0px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 .title{
-    font-size: 48px;
+    font-size: 3.8rem;
     color: antiquewhite;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    margin: 10px 0px 20px 0px;
-    transform: translateX(-50%);
+    margin: 20px 0px 30px 0px;
     animation-name: change-size;
     animation-duration: 3s;
 }
 @media screen and (max-width: 930px){
     .title{
-        font-size: 42px;
+        font-size: 3.2rem;
         animation-name: change-small;
         animation-duration: 3s;
     }
 }
 @media screen and (max-width: 630px){
     .title{
-       font-size: 30px;
+       font-size: 2.8rem;
        animation-name: none;
     }
 }
 
 .container{
-    margin-top: 100px;
-    width: 850px;
-    /* height: 800px; */
+    width: calc(80% - 40px);
+    margin: 0px 100px;
+    height: 100%;
     background-color:rgba(135, 206, 250, 0.895);
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
+    padding: 10px 20px;
     overflow: hidden;
     border: 3px solid black;
     box-shadow: 0px 2px 15px black;
     border-radius: 10px;
 }
-@media screen and (max-width: 930px){
+@media screen and (max-width: 1076px){
     .container{
-        width: 600px;
+        width: calc(100% - 60px);
     }
 }
 @media screen and (max-width: 630px){
     .container{
-        width: 400px;
+        width: calc(100% - 40px);
     }
 }
 
 input{
     visibility: hidden;
     cursor: none;
-    position: absolute;
 }
 .slide-block{
-    height: 750px;
-    padding:  20px;
-    width: 20%;
+    height: 75rem;
+    padding: 20px;
+    width: 100%;
     transition: all 0.4s;
 }
 @media screen and (max-width: 930px){
     .slide-block{
-        height: 600px;
+        height: 60rem;
     }
 }
 @media screen and (max-width: 630px){
     .slide-block{
-        height: 500px;
+        height: 50rem;
     }
 }
 .slide-image{
     width: 100%;
-    height: 600px;
+    height: 60rem;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 100%;
+    opacity: 0;
+    transition: all 0.9s;
 }
 @media screen and (max-width: 930px){
     .slide-image{
-        background-size: 600px;
-        height: 400px;
+        background-size: 100%;
+        height: 40rem;
     }
 }
 @media screen and (max-width: 630px){
     .slide-image{
-        background-size: 400px;
-        height: 300px;
+        background-size: 100%;
+        height: 30rem;
     }
 }
 
-.one{
-    background-image: url(assets/images/1.jpg);
-}
-.two{
-    background-image: url(assets/images/2.jpg);
-}
-.three{
-    background-image: url(assets/images/3.jpg);
-}
-.four{
-    background-image: url(assets/images/4.jpg);
-}
-.five{
-    background-image: url(assets/images/5.jpg);
-}
+.text{
+    opacity: 0;
+    display: block;
+    height: 50px;
 
+}
 .slide-text{
     margin-top: 40px;
     font-size: 32px;
@@ -135,58 +124,73 @@ input{
     font-style: italic;
     font-weight: bold;
     transition: all 0.4s;
-    transform: translateY(-100px);
-    z-index: 0;
-    opacity: 0;
 }
+
+
 @media screen and (max-width: 930px){
     .slide-text{
-        font-size: 32px;
-        margin-top: 90px;
-        transform: translateY(0px);
+        font-size: 3.2rem;
+        align-self: start;
     }
 }
 @media screen and (max-width: 630px){
     .slide-text{
-        font-size: 28px;
+        font-size: 2.8rem;
 
+    }
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+@media screen and (max-width: 930px){
+    .info{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
     }
 }
 
 .navigator{
-    position: absolute;
-    z-index: 2;
-    right: 20px;
-    bottom: 52px;
+    margin-top: 40px;
     display: flex;
     flex-direction: row;
-    
 }
 
-@media screen and (max-width: 930px){
+@media screen and (max-width: 630px){
     .navigator{
-        right: 50%;
-        bottom: 110px;
-        transform: translateX(50%);
+        margin-top: 20px;
     }
 }
 .nav{
+    /* width: 32px;
+    height: 32px; */
+    margin: 5px;
+    border-radius: 50%;
+    /* background-image: url(assets/icon/smile.png);
+    background-size: auto;
+    background-position: 0 0;
+    background-repeat: no-repeat; */
+    transition: all 0.6s;
+    cursor: pointer
+}
+.icon{
+    display: block;
     width: 32px;
     height: 32px;
-    margin: 5px;
     border-radius: 50%;
     background-image: url(assets/icon/smile.png);
     background-size: auto;
     background-position: 0 0;
     background-repeat: no-repeat;
     transition: all 0.6s;
-    cursor: pointer
 }
 
-.nav:hover{
+.icon:hover{
     background-color: rgba(255, 255, 0, 0.5);
 }
-.nav:active{
+.icon:active{
     box-shadow: 0px 0px 20px yellow;
     border: 1px solid yellow;
     transform: scale(1.03);
@@ -194,57 +198,88 @@ input{
 
 }
 
-.sliders-container{
-    width: 500%;
-    height: 100%;
-    display: flex;
+#el1:checked ~ .slide-block .slide-image{
+    background-image: url(assets/images/1.jpg);
+    animation-name: change-opacity;
+    animation-duration: 4s;
+    opacity: 1;
 }
-#el1:checked ~ .first{
-    margin-left: 0;
+#el2:checked ~ .slide-block .slide-image{
+    background-image: url(assets/images/2.jpg);
+    animation-name: change-opacity;
+    opacity: 1;
+    animation-duration: 4s;
 }
-#el2:checked ~ .first{
-    margin-left: -20%;
+#el3:checked ~ .slide-block .slide-image{
+    background-image: url(assets/images/3.jpg);
+    animation-name: change-opacity;
+    opacity: 1;
+    animation-duration: 4s;
 }
-#el3:checked ~ .first{
-    margin-left: -40%;
+#el4:checked ~ .slide-block .slide-image{
+    background-image: url(assets/images/4.jpg);
+    animation-name: change-opacity;
+    opacity: 1;
+    animation-duration: 4s;
 }
-#el4:checked ~ .first{
-    margin-left: -60%;
+#el5:checked ~ .slide-block .slide-image{
+    background-image: url(assets/images/5.jpg);
+    animation-name: change-opacity;
+    opacity: 1;
+    animation-duration: 4s;
 }
-#el5:checked ~ .first{
-    margin-left: -80%;
+#el1:checked ~ .slide-block .text1{
+    opacity: 1;
+    animation-name: change-opacity;
+    animation-duration: 3s;
 }
-#el1:checked ~ .slide-block .text1,
-#el2:checked ~ .slide-block .text2,
-#el3:checked ~ .slide-block .text3,
-#el4:checked ~ .slide-block .text4,
+#el2:checked ~ .slide-block .text2{
+    opacity: 1;
+    transform: translateY(-50px);
+    animation-name: change-opacity;
+    animation-duration: 3s;
+    
+}
+#el3:checked ~ .slide-block .text3{
+    opacity: 1;
+    transform: translateY(-100px);
+    animation-name: change-opacity;
+    animation-duration: 3s;
+
+}
+#el4:checked ~ .slide-block .text4{
+    opacity: 1;
+    transform: translateY(-150px);
+    animation-name: change-opacity;
+    animation-duration: 3s;
+}
 #el5:checked ~ .slide-block .text5{
-    z-index: 1;
-   opacity: 1;
-   transform: translateY(0px);
-   animation-name: change-opacity;
-   animation-duration: 2s;
-   transition: all 0.6s;
-
+    opacity: 1;
+    transform: translateY(-200px);
+    animation-name: change-opacity;
+    animation-duration: 3s;
 }
 
-#el1:checked ~ .navigator label:nth-child(1),
-#el2:checked ~ .navigator label:nth-child(2),
-#el3:checked ~ .navigator label:nth-child(3),
-#el4:checked ~ .navigator label:nth-child(4),
-#el5:checked ~ .navigator label:nth-child(5){
+
+
+
+#el1:checked ~ .slide-block .navigator label:nth-child(1) .icon,
+#el2:checked ~ .slide-block .navigator label:nth-child(2) .icon,
+#el3:checked ~ .slide-block .navigator label:nth-child(3) .icon,
+#el4:checked ~ .slide-block .navigator label:nth-child(4) .icon,
+#el5:checked ~ .slide-block .navigator label:nth-child(5) .icon{
     background-color: yellow;
     transform: rotate(180deg);
     transition: all 0.3s;
    
 }
 @keyframes change-size {
-    0% {font-size: 24px;}
-    100%{font-size: 48px;}
+    0% {font-size: 2.4rem;}
+    100%{font-size: 3.8rem;}
 }
 @keyframes change-small{
-    0% {font-size: 20px;}
-    100%{font-size: 42px;}
+    0% {font-size: 2.0rem;}
+    100%{font-size: 3.2rem;}
 }
 @keyframes change-opacity{
     0% {opacity: 0;}
