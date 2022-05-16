@@ -12,14 +12,12 @@ html{
 body{
     width: 100%;
     height: 100%;
-    
     background-color: rgba(0, 0, 0, 0.7);
     overflow-x: hidden;
 }
 .wrapper{
     max-width: 1440px;
     margin: 0 auto;
-    width: 100%;
     padding: 0px 20px;
     display: flex;
     align-items: center;
@@ -27,45 +25,56 @@ body{
     flex-direction: column;
 }
 .title{
-    font-size: 3.8rem;
+    font-size: 4.2rem;
     color: antiquewhite;
-    margin: 20px 0px 30px 0px;
+    margin: 2rem 0 3rem 0;
     animation-name: change-size;
+    -webkit-animation-name: change-size;
+    -o-animation-name: change-size;
+    -moz-animation-name: change-size;
+    -webkit-animation-duration: 3s;
+    -o-animation-duration: 3s;
+    -moz-animation-duration: 3s;
     animation-duration: 3s;
 }
 @media screen and (max-width: 930px){
     .title{
-        font-size: 3.2rem;
+        font-size: 3.8rem;
         animation-name: change-small;
+        -webkit-animation-name: change-small;
+        -o-animation-name: change-small;
+        -moz-animation-name: change-small;
+        -webkit-animation-duration: 3s;
+        -o-animation-duration: 3s;
+        -moz-animation-duration: 3s;
         animation-duration: 3s;
     }
 }
 @media screen and (max-width: 630px){
     .title{
-       font-size: 2.8rem;
+       font-size: 3.6rem;
        animation-name: none;
     }
 }
 
 .container{
-    width: calc(80% - 40px);
-    margin: 0px 100px;
+    width: calc(80% - 4rem);
     height: 100%;
     background-color:rgba(135, 206, 250, 0.895);
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     overflow: hidden;
-    border: 3px solid black;
-    box-shadow: 0px 2px 15px black;
-    border-radius: 10px;
+    border: 0.3rem solid black;
+    box-shadow: 0rem 0.2rem 1.5rem black;
+    border-radius: 1rem;
 }
 @media screen and (max-width: 1076px){
     .container{
-        width: calc(100% - 60px);
+        width: calc(100% - 6rem);
     }
 }
 @media screen and (max-width: 630px){
     .container{
-        width: calc(100% - 40px);
+        width: calc(100% - 4rem);
     }
 }
 
@@ -75,9 +84,12 @@ input{
 }
 .slide-block{
     height: 75rem;
-    padding: 20px;
     width: 100%;
-    transition: all 0.4s;
+    transition: all 0.4s ease-in; 
+    -webkit-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
+    
 }
 @media screen and (max-width: 930px){
     .slide-block{
@@ -89,6 +101,11 @@ input{
         height: 50rem;
     }
 }
+@media screen and (max-width: 460px){
+    .slide-block{
+        height: 35rem;
+    }
+}
 .slide-image{
     width: 100%;
     height: 60rem;
@@ -96,7 +113,10 @@ input{
     background-repeat: no-repeat;
     background-size: 100%;
     opacity: 0;
-    transition: all 0.9s;
+    transition: all 0.9s ease-in;
+    -webkit-transition: all 0.9s ease-in;
+    -o-transition: all 0.9s ease-in;
+    -moz-transition: all 0.9s ease-in;
 }
 @media screen and (max-width: 930px){
     .slide-image{
@@ -110,26 +130,35 @@ input{
         height: 30rem;
     }
 }
+@media screen and (max-width: 460px){
+    .slide-image{
+        height: 20rem;
+    }
+}
 
 .text{
     opacity: 0;
     display: block;
-    height: 50px;
+    height: 5rem;
 
 }
 .slide-text{
-    margin-top: 40px;
-    font-size: 32px;
+    margin-top: 4rem;
+    font-size: 3.6rem;
     text-align: left;
     font-style: italic;
     font-weight: bold;
-    transition: all 0.4s;
+    transition: all 0.4s ease-in;
+    -webkit-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
 }
 
 
 @media screen and (max-width: 930px){
     .slide-text{
         font-size: 3.2rem;
+        margin-top: 1.0rem;
         align-self: start;
     }
 }
@@ -137,6 +166,12 @@ input{
     .slide-text{
         font-size: 2.8rem;
 
+    }
+}
+@media screen and (max-width: 460px){
+    .slide-text{
+        font-size: 2.4rem;
+        margin-top: 1.5rem;
     }
 }
 .info{
@@ -153,48 +188,68 @@ input{
 }
 
 .navigator{
-    margin-top: 40px;
+    margin-top: 4rem;
     display: flex;
     flex-direction: row;
 }
 
 @media screen and (max-width: 630px){
     .navigator{
-        margin-top: 20px;
+        margin-top: 2rem;
+    }
+}
+@media screen and (max-width: 460px){
+    .navigator{
+        margin-top: 1.5rem;
     }
 }
 .nav{
-    /* width: 32px;
-    height: 32px; */
-    margin: 5px;
+    display: flex;
+    height: 6rem;
+    margin: 0.5rem;
     border-radius: 50%;
-    /* background-image: url(assets/icon/smile.png);
-    background-size: auto;
-    background-position: 0 0;
-    background-repeat: no-repeat; */
-    transition: all 0.6s;
+    transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    -o-transition: all 0.6s ease-in;
+    -moz-transition: all 0.6s ease-in;
     cursor: pointer
+}
+@media screen and (max-width: 460px){
+    .nav{
+        height: 4rem;
+    }
 }
 .icon{
     display: block;
-    width: 32px;
-    height: 32px;
+    width: 3.2rem;
+    height: 3.2rem;
     border-radius: 50%;
     background-image: url(assets/icon/smile.png);
     background-size: auto;
     background-position: 0 0;
     background-repeat: no-repeat;
-    transition: all 0.6s;
+    transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    -o-transition: all 0.6s ease-in;
+    -moz-transition: all 0.6s ease-in;
 }
-
+.nav:hover .icon{
+    background-color: rgba(255, 255, 0, 0.5);
+}
 .icon:hover{
     background-color: rgba(255, 255, 0, 0.5);
 }
 .icon:active{
-    box-shadow: 0px 0px 20px yellow;
-    border: 1px solid yellow;
-    transform: scale(1.03);
-    transition: all 0.6s;
+    box-shadow: 0px 0.2rem 2rem yellow;
+    border: 0.1rem solid black;
+    transform: scale(0.96);
+    -webkit-transform: scale(0.96);
+    -o-transform: scale(0.96);
+    -moz-transform: scale(0.96);
+    transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    -o-transition: all 0.6s ease-in;
+    -moz-transition: all 0.6s ease-in;
 
 }
 
@@ -202,6 +257,12 @@ input{
     background-image: url(assets/images/1.jpg);
     animation-name: change-opacity;
     animation-duration: 4s;
+    -webkit-animation-name: change-opacity;
+    -o-animation-name: change-opacity;
+    -moz-animation-name: change-opacity;
+    -webkit-animation-duration: 4s;
+    -o-animation-duration: 4s;
+    -moz-animation-duration: 4s;
     opacity: 1;
 }
 #el2:checked ~ .slide-block .slide-image{
@@ -209,55 +270,121 @@ input{
     animation-name: change-opacity;
     opacity: 1;
     animation-duration: 4s;
+    -webkit-animation-name: change-opacity;
+    -o-animation-name: change-opacity;
+    -moz-animation-name: change-opacity;
+    -webkit-animation-duration: 4s;
+    -o-animation-duration: 4s;
+    -moz-animation-duration: 4s;
 }
 #el3:checked ~ .slide-block .slide-image{
     background-image: url(assets/images/3.jpg);
     animation-name: change-opacity;
     opacity: 1;
     animation-duration: 4s;
+    -webkit-animation-name: change-opacity;
+    -o-animation-name: change-opacity;
+    -moz-animation-name: change-opacity;
+    -webkit-animation-duration: 4s;
+    -o-animation-duration: 4s;
+    -moz-animation-duration: 4s;
 }
 #el4:checked ~ .slide-block .slide-image{
     background-image: url(assets/images/4.jpg);
     animation-name: change-opacity;
     opacity: 1;
     animation-duration: 4s;
+    -webkit-animation-name: change-opacity;
+    -o-animation-name: change-opacity;
+    -moz-animation-name: change-opacity;
+    -webkit-animation-duration: 4s;
+    -o-animation-duration: 4s;
+    -moz-animation-duration: 4s;
 }
 #el5:checked ~ .slide-block .slide-image{
     background-image: url(assets/images/5.jpg);
     animation-name: change-opacity;
     opacity: 1;
     animation-duration: 4s;
+    -webkit-animation-name: change-opacity;
+    -o-animation-name: change-opacity;
+    -moz-animation-name: change-opacity;
+    -webkit-animation-duration: 4s;
+    -o-animation-duration: 4s;
+    -moz-animation-duration: 4s;
 }
 #el1:checked ~ .slide-block .text1{
     opacity: 1;
     animation-name: change-opacity;
     animation-duration: 3s;
+    -webkit-animation-name: change-opacity;
+    -o-animation-name: change-opacity;
+    -moz-animation-name: change-opacity;
+    -webkit-animation-duration: 3s;
+    -o-animation-duration: 3s;
+    -moz-animation-duration: 3s;
 }
 #el2:checked ~ .slide-block .text2{
     opacity: 1;
     transform: translateY(-50px);
+    -moz-transform: translateY(-50px);
+    -o-transform: translateY(-50px);
+    -webkit-transform: translateY(-50px);
     animation-name: change-opacity;
     animation-duration: 3s;
+    -webkit-animation-name: change-opacity;
+    -o-animation-name: change-opacity;
+    -moz-animation-name: change-opacity;
+    -webkit-animation-duration: 3s;
+    -o-animation-duration: 3s;
+    -moz-animation-duration: 3s;
     
 }
 #el3:checked ~ .slide-block .text3{
     opacity: 1;
     transform: translateY(-100px);
+    -moz-transform: translateY(-100px);
+    -o-transform: translateY(-100px);
+    -webkit-transform: translateY(-100px);
     animation-name: change-opacity;
     animation-duration: 3s;
+    -webkit-animation-name: change-opacity;
+    -o-animation-name: change-opacity;
+    -moz-animation-name: change-opacity;
+    -webkit-animation-duration: 3s;
+    -o-animation-duration: 3s;
+    -moz-animation-duration: 3s;
 
 }
 #el4:checked ~ .slide-block .text4{
     opacity: 1;
     transform: translateY(-150px);
+    -moz-transform: translateY(-150px);
+    -o-transform: translateY(-150px);
+    -webkit-transform: translateY(-150px);
     animation-name: change-opacity;
     animation-duration: 3s;
+    -webkit-animation-name: change-opacity;
+    -o-animation-name: change-opacity;
+    -moz-animation-name: change-opacity;
+    -webkit-animation-duration: 3s;
+    -o-animation-duration: 3s;
+    -moz-animation-duration: 3s;
 }
 #el5:checked ~ .slide-block .text5{
     opacity: 1;
     transform: translateY(-200px);
+    -moz-transform: translateY(-200px);
+    -o-transform: translateY(-200px);
+    -webkit-transform: translateY(-200px);
     animation-name: change-opacity;
     animation-duration: 3s;
+    -webkit-animation-name: change-opacity;
+    -o-animation-name: change-opacity;
+    -moz-animation-name: change-opacity;
+    -webkit-animation-duration: 3s;
+    -o-animation-duration: 3s;
+    -moz-animation-duration: 3s;
 }
 
 
@@ -270,16 +397,22 @@ input{
 #el5:checked ~ .slide-block .navigator label:nth-child(5) .icon{
     background-color: yellow;
     transform: rotate(180deg);
-    transition: all 0.3s;
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in;
+    -o-transi-moz-transition: all 0.3s ease-in;
+    -webkit-transi-moz-transition: all 0.3s ease-in;
    
 }
 @keyframes change-size {
     0% {font-size: 2.4rem;}
-    100%{font-size: 3.8rem;}
+    100%{font-size: 4.2rem;}
 }
 @keyframes change-small{
     0% {font-size: 2.0rem;}
-    100%{font-size: 3.2rem;}
+    100%{font-size: 3.8rem;}
 }
 @keyframes change-opacity{
     0% {opacity: 0;}
